@@ -29,18 +29,8 @@
                         title: "Pontuação Bovespa",
                         path: "/"
                     },
-                ],
-                windowWidth: window.innerWidth,
-                menuVisible: false,
-                currentPage: "Pontuação Bovespa",
-                currentComponent: "Bovespa"
+                ]
             };
-        },
-        methods: {
-            changePage(page) {
-                this.currentPage = page.title;
-                this.currentComponent = page.componentName;
-            }
         }
     }
 </script>

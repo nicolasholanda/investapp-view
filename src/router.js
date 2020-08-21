@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router'
-import Bovespa from "@/views/Bovespa";
+import TimeSeries from "@/views/TimeSeries";
 import NotFound from "@/views/NotFound";
 
 Vue.use(Router);
@@ -14,7 +14,7 @@ export default new Router({
         },
         {
             path: '/',
-            component: Bovespa
+            component: TimeSeries
         }
     ]
 })
