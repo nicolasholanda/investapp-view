@@ -68,6 +68,9 @@
 
     export default {
         name: "TimeSeries",
+        props: [
+            "symbol"
+        ],
         data() {
              return {
                  intervals: [
@@ -105,7 +108,7 @@
                 return interval.id === this.currentInterval ? "md-raised md-primary" : "";
             },
             fetchEquity() {
-                let promise = getGlobalQuote("IBM");
+                let promise = getGlobalQuote(this.symbol);
                 promise.then(response => {
                     this.equity = response.data;
                     this.setChart()
@@ -119,7 +122,7 @@
                 this.loading = true;
                 this.error = false;
 
-                let promise = getTimeSeries("IBM", interval);
+                let promise = getTimeSeries(this.symbol, interval);
                 promise.then(response => {
                     this.timeSeries = response.data;
                     this.fetchEquity()
@@ -204,6 +207,9 @@
         },
         watch: {
             currentInterval() {
+                this.fetchTimeSeries(this.currentInterval)
+            },
+            symbol() {
                 this.fetchTimeSeries(this.currentInterval)
             }
         }

@@ -27,7 +27,13 @@
                         id: 1,
                         icon: "bar_chart",
                         title: "Pontuação Bovespa",
-                        path: "/"
+                        path: "/bovespa"
+                    },
+                    {
+                        id: 2,
+                        icon: "work",
+                        title: "Buscar empresas",
+                        path: "/empresas"
                     },
                 ]
             };
